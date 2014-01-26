@@ -1,0 +1,13 @@
+{
+  "name": "sockjs",
+  "url": "https://github.com/jeremyfa/openfl-sockjs",
+  "license": "MIT",
+  "tags": ["websocket", "socket", "sockjs", "cross"],
+  "description": "Cross-platform SockJS client library for realtime remoting with OpenFL apps and a SockJS websocket server.",
+  "version": "1.0.0",
+  "releasenote": "",
+  "contributors": ["Jérémy Faivre <contact@jeremyfa.com>"],
+  "dependencies": {
+    "openfl" : ""
+  }
+}
