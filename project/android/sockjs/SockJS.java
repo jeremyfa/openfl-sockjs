@@ -154,7 +154,7 @@ public class SockJS {
                 final int instanceId = mInstanceId;
                 Extension.callbackHandler.post(new Runnable() {
                     public void run() {
-                        Log.d("lime", "ON OPEN "+instanceId);
+                        //Log.d("lime", "ON OPEN "+instanceId);
                         sListener.call1("onOpen", instanceId);
                     }
                 });
@@ -165,7 +165,7 @@ public class SockJS {
                 final int instanceId = mInstanceId;
                 Extension.callbackHandler.post(new Runnable() {
                     public void run() {
-                        Log.d("lime", "ON MESSAGE "+instanceId+" "+message);
+                        //Log.d("lime", "ON MESSAGE "+instanceId+" "+message);
                         sListener.call2("onMessage", instanceId, message);
                     }
                 });
@@ -176,7 +176,7 @@ public class SockJS {
                 final int instanceId = mInstanceId;
                 Extension.callbackHandler.post(new Runnable() {
                     public void run() {
-                        Log.d("lime", "ON CLOSE "+instanceId);
+                        //Log.d("lime", "ON CLOSE "+instanceId);
                         sListener.call1("onClose", instanceId);
                     }
                 });
