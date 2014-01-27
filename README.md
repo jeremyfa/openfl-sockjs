@@ -30,7 +30,7 @@ import sockjs.SockJS;
 #### Create and connect socket
 
 ``` haxe
-// Create socket (automatically reconnect when connection is cut).
+// Create socket (automatically reconnect when connection is lost).
 var socket:SockJS = new SockJS("http://yourdomain.com/sockjs", {reconnect: true});
 
 // Listen open event
