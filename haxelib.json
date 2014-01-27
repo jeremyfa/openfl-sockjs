@@ -2,11 +2,11 @@
   "name": "sockjs",
   "url": "https://github.com/jeremyfa/openfl-sockjs",
   "license": "MIT",
-  "tags": ["websocket", "socket", "sockjs", "cross"],
+  "tags": ["websocket", "socket", "sockjs", "cross", "openfl"],
   "description": "Cross-platform SockJS client library for realtime remoting between OpenFL apps and SockJS websocket server.",
   "version": "1.0.0",
   "releasenote": "Tested on iOS, Android, C++ (tested on mac, but should be OK on windows too), Neko, Flash, Flash inside HTML5, HTML5.",
-  "contributors": ["Jérémy Faivre <contact@jeremyfa.com>"],
+  "contributors": ["jeremyfa"],
   "dependencies": {
     "openfl" : ""
   }

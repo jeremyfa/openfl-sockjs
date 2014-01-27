@@ -5,13 +5,13 @@ Cross-platform SockJS client library for realtime remoting with OpenFL apps and 
 
 This library allows OpenFL/Haxe apps to connect to SockJS servers. It has been tested on iOS, Android, C++ (tested on mac, but should be OK on windows too), Neko, Flash, Flash inside HTML5 and HTML5.
 
-SockJS server can run on Node.js, Python or even Java plarforms (more info: https://github.com/sockjs/sockjs-client).
+SockJS server can run on Node.js, Python, Java or even Golang (more info: https://github.com/sockjs/sockjs-node).
 
-The idea is that SockJS can use websockets if they are available but is able to fall back to other protocols like HTTP polling or HTTP streaming. This allow to have a realtime socket emulation library that can work in bad conditions such as a very restricting proxy and so on.
+The idea is that SockJS can use websockets if they are available but is able to fall back to other protocols like HTTP polling or HTTP streaming. This allow to have a realtime socket emulation library that can work in bad conditions such as a very restricting proxy.
 
 ### How does it work?
 
-The most common use of SockJS is with the javascript client library as it is able to choose the best protocol available depending on the current network and the device capabilities.
+The most common use case of SockJS is with the javascript client library as it is able to choose the best protocol available depending on the current network and the device capabilities.
 
 That said, javascript is not available on all OpenFL targets. It is, however, available on iOS and Android targets through WebViews and on Flash target when embedded inside a web page using the ExternalInterface API. It is of course also available on HTML5 target!
 
@@ -21,7 +21,19 @@ When running on a platform that doesn't allow the use of the SockJS javascript c
 
 ### How to use
 
-#### Import SockJS class
+#### Install sockjs library
+
+``` bash
+haxelib install sockjs
+```
+
+#### Add sockjs dependency to your OpenFL project.xml file
+
+``` xml
+<haxelib name="sockjs" />
+```
+
+#### Import SockJS class in your code
 
 ``` haxe
 import sockjs.SockJS;
@@ -62,3 +74,10 @@ socket.connect();
 ``` haxe
 socket.send("Hello!");
 ```
+
+### Setup a server
+
+The easiest and most common way to run a sockjs server is, so far, using Node.js with sockjs-node module.
+
+Just follow the related documentation: https://github.com/sockjs/sockjs-node
+ 
