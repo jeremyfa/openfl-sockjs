@@ -184,9 +184,9 @@ class SockJS
                 #if html5
                 if (_options.clientJS != null) {
                     Lib.eval("window._sockjs_js_socket_"+_instanceId+" = new window.SockJS(window._sockjs_js_serverURL);");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onopen = function() { sockjs.SockJS._sHandleOpen("+_instanceId+") };");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onclose = function() { sockjs.SockJS._sHandleClose("+_instanceId+") };");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onmessage = function(e) { sockjs.SockJS._sHandleMessage("+_instanceId+",e.data) };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onopen = function() { sockjs_SockJS._sHandleOpen("+_instanceId+") };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onclose = function() { sockjs_SockJS._sHandleClose("+_instanceId+") };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onmessage = function(e) { sockjs_SockJS._sHandleMessage("+_instanceId+",e.data) };");
                 } else {
                     _httpTransport.reconnect();
                 }
@@ -223,9 +223,9 @@ class SockJS
                     Lib.eval("(function(){ var SockJS; (function(){"+_options.clientJS+"})(); window.SockJS = SockJS; })();");
                     Lib.eval("window._sockjs_js_serverURL = "+Json.stringify(_options.serverURL)+";");
                     Lib.eval("window._sockjs_js_socket_"+_instanceId+" = new window.SockJS(window._sockjs_js_serverURL);");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onopen = function() { sockjs.SockJS._sHandleOpen("+_instanceId+") };");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onclose = function() { sockjs.SockJS._sHandleClose("+_instanceId+") };");
-                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onmessage = function(e) { sockjs.SockJS._sHandleMessage("+_instanceId+",e.data) };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onopen = function() { sockjs_SockJS._sHandleOpen("+_instanceId+") };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onclose = function() { sockjs_SockJS._sHandleClose("+_instanceId+") };");
+                    Lib.eval("window._sockjs_js_socket_"+_instanceId+".onmessage = function(e) { sockjs_SockJS._sHandleMessage("+_instanceId+",e.data) };");
                 } else {
                     _httpTransport = new SockJSTransportHttp(_instanceId, _options.serverURL, _sHandleOpen, _sHandleMessage, _sHandleClose, _sHandleCustomError);
                 }
